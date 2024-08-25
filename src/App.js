@@ -1,18 +1,31 @@
 import './App.css';
 import logo from './GWOrgLogo2.png';
 
+import SignIn from './components/SignIn.js';
+import BodyControls from './components/BodyControls.js';
+import BodyItems from './components/BodyItems.js';
+
 function App() {
+
   return(
-    <nav className="navbar navbar-expand-lg navbar-dark">
-      <div className="container ms-3">
-        <a href="/" className="navbar-brand col"><img src={logo} className="logo" alt="some shit" /></a>
-        <div className='container col'></div>
-        <div className='container col'>
-          <button className='btn '></button>
+    <div className="screen">
+      <nav className="navbar navbar-expand">
+        <a href="/" className="navbar-brand"><img src={logo} className="logo" alt="GWOrg" /></a>
+        <SignIn />
+      </nav>
+      <div className='container page-body'>
+        <div className="container page-body-header justify-content-center d-flex">
+          <BodyControls />
         </div>
-        
+        <div className='container page-body'>
+          <BodyItems />
+        </div>
       </div>
-    </nav>
+      <div className="footer d-flex justify-content-center m-3">
+        <p className="">GWOrg - {new Date().getFullYear()}</p>
+      </div>
+    </div>
+    
   );
 }
 

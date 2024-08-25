@@ -1,11 +1,30 @@
 img.logo {
     width: 250px;
+    height: 110px;
 }
 
 .navbar {
     background-color: #FBBA72;
+    height: 100px;
+    
 }
 
-.btn {
-    margin-left: 5px;
+.page-body-header {
+    background-color: #F4E8C1;
+    width: 90%;
+    min-height: 500px;
+}
+
+.page-body {
+    /* background-color: #F3DE8A; */
+    background-color: #F4E8C1;
+    width: 90%;
+}
+
+.footer {
+    font-size: small;
+}
+
+.screen {
+    font-size: large;
 }

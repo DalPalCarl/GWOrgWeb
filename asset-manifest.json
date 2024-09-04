@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/gworgweb/static/css/main.dc001af5.css",
+    "main.js": "/gworgweb/static/js/main.eaf8bb46.js",
+    "static/media/GWOrgLogo2.png": "/gworgweb/static/media/GWOrgLogo2.04096e32c8f2ac2e7f76.png",
+    "index.html": "/gworgweb/index.html",
+    "main.dc001af5.css.map": "/gworgweb/static/css/main.dc001af5.css.map",
+    "main.eaf8bb46.js.map": "/gworgweb/static/js/main.eaf8bb46.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc001af5.css",
+    "static/js/main.eaf8bb46.js"
+  ]
+}

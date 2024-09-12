@@ -2,15 +2,7 @@ import { UserAuth } from "../context/AuthContext";
 
 const SignIn = () => {
 
-    const { googleSignIn, user, logOut } = UserAuth();
-
-    const handleGoogleSignIn = async () => {
-        try {
-            await googleSignIn();
-        } catch (e) {
-            console.log(e);
-        }
-    }
+    const { user, logOut } = UserAuth();
 
     const handleSignOut = async () => {
         try {
@@ -21,11 +13,11 @@ const SignIn = () => {
     }
 
     return (
-        <nav className="navbar sticky-top">
+        <nav className="navbar sticky-top oswald">
             <div className="container">
-                { user?.displayName ? 
-                    <button className="btn btn-secondary" onClick={handleSignOut}>Sign Out</button> :
-                    <button className='btn btn-primary' onClick={handleGoogleSignIn}>Sign In</button>
+                { user?.uid ? 
+                    <button className="btn btn-secondary" onClick={() => handleSignOut()}>Sign Out</button> :
+                    null
                 }
                 
             </div>

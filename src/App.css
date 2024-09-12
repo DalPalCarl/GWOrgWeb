@@ -12,13 +12,13 @@ img.logo {
 .page-body-header {
     background-color: #F4E8C1;
     width: 90%;
-    min-height: 500px;
 }
 
 .page-body {
     /* background-color: #F3DE8A; */
     background-color: #F4E8C1;
     width: 90%;
+    justify-content: center;
 }
 
 .footer {
@@ -27,4 +27,36 @@ img.logo {
 
 .screen {
     font-size: large;
+}
+
+.oswald {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.id-bg-on {
+    background-color: #08a75d;
+    color: white;
+}
+
+.id-bg-off {
+    background-color: #f4495a;
+    color: white;
+}
+
+.ig-bg-un {
+    background-color: #99a0a7;
+    color: black;
+}
+
+.btn {
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.modal-title {
+    white-space: unset;
+    word-wrap: break-word;
 }

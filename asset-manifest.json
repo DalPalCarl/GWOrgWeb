@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/GWOrgWeb/static/css/main.e256e9a1.css",
-    "main.js": "/GWOrgWeb/static/js/main.0f583245.js",
+    "main.css": "/GWOrgWeb/static/css/main.e247c660.css",
+    "main.js": "/GWOrgWeb/static/js/main.bfeb0615.js",
     "static/media/GWOrgLogo2.png": "/GWOrgWeb/static/media/GWOrgLogo2.04096e32c8f2ac2e7f76.png",
     "index.html": "/GWOrgWeb/index.html",
-    "main.e256e9a1.css.map": "/GWOrgWeb/static/css/main.e256e9a1.css.map",
-    "main.0f583245.js.map": "/GWOrgWeb/static/js/main.0f583245.js.map"
+    "main.e247c660.css.map": "/GWOrgWeb/static/css/main.e247c660.css.map",
+    "main.bfeb0615.js.map": "/GWOrgWeb/static/js/main.bfeb0615.js.map"
   },
   "entrypoints": [
-    "static/css/main.e256e9a1.css",
-    "static/js/main.0f583245.js"
+    "static/css/main.e247c660.css",
+    "static/js/main.bfeb0615.js"
   ]
 }

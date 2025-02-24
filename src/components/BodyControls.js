@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 const BodyControls = () => {
 
-    const { user, filterButtonPress, importButtonPress, coll, setFilter } = UserAuth();
+    const { user, filterButtonPress, importButtonPress, coll, setFilter, isDark } = UserAuth();
     const [file, setFile] = useState(null);
     const [isConfirming, setIsConfirming] = useState(false);
     const [authDelete, setAuthDelete] = useState(false);

@@ -12,12 +12,14 @@ import { collection, query, limit, getDocs, setDoc, doc } from 'firebase/firesto
 
 const AuthContext = createContext();
 const provider = new GoogleAuthProvider();
+provider.addScope("https://www.googleapis.com/auth/firebase.readonly");
 
 export const AuthContextProvider = ({children}) => {
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState(null);
     const [coll, setColl] = useState(null);
     const [filter, setFilter] = useState('-1');
     const [csvFile, setCsvFile] = useState('');
+    const [isDark, setIsDark] = useState(false);
 
     const generateNewColl = async (newUser) => {
         const docData = {
@@ -43,16 +45,15 @@ export const AuthContextProvider = ({children}) => {
     }
 
     const googleSignIn = async () => {
-        const provider = new GoogleAuthProvider();
-        const signedUser = await signInWithPopup(auth, provider)
+        await signInWithPopup(auth, provider)
             .then((res) => {
-                //const credential = GoogleAuthProvider.credentialFromResult(res);
                 setUser(res.user);
-                console.log(res);
             }).catch((error) => {
                 const errorCode = error.code;
                 console.log(errorCode);
         });
+
+        // await signInWithRedirect(auth, provider);
         setFilter('-1');
     }
 
@@ -77,7 +78,6 @@ export const AuthContextProvider = ({children}) => {
     const logOut = async () => {
         await signOut(auth)
         .then(() => {
-            console.log("sign out successful");
         })
         .catch((err) => {
             console.log(err);
@@ -98,16 +98,19 @@ export const AuthContextProvider = ({children}) => {
     const importButtonPress = (csvData) => {
         setCsvFile(csvData);
     }
+
+    const toggleTheme = () => {
+        setIsDark(!isDark);
+    }
     
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            console.log("user changed");
             if (currentUser !== null){
                 setUser(currentUser);
                 setColl(collection(db, currentUser.uid.toString()));
             }
             else{
-                setUser(currentUser);
+                setUser(null);
                 setColl(null);
             }
         });
@@ -118,7 +121,7 @@ export const AuthContextProvider = ({children}) => {
     }, []);
 
     return (
-        <AuthContext.Provider value={{googleSignIn, signIn, createUser, user, logOut, coll, filterButtonPress, filter, importButtonPress, csvFile, setFilter}}>
+        <AuthContext.Provider value={{isDark, setIsDark, googleSignIn, signIn, createUser, user, logOut, coll, filterButtonPress, filter, importButtonPress, csvFile, setFilter}}>
             {children}
         </AuthContext.Provider>
     )

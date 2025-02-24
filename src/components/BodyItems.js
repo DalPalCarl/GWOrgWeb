@@ -89,6 +89,7 @@ const BodyItems = () => {
     }, [csvFile]);
 
     useEffect(() => { // Initialize Collection Listener
+        console.log(user);
         if (user !== null){ //When user is signed in (collection doesn't exist)
             collListener();
             setCreatingUser(false);
@@ -96,8 +97,8 @@ const BodyItems = () => {
         else{  //When user isn't signed in (collection is present)
             if (collectionUnsubscribe){
                 collectionUnsubscribe();
-                setCurrentList([]);
             }
+            setCurrentList([]);
         }
     }, [user]);
 
@@ -183,9 +184,9 @@ const BodyItems = () => {
                 <h4 className="text-center oswald">{user?.uid ? "Entries" : ""}</h4>
                 {user?.uid ?
                     currentList.map((entry, index) =>
-                        <div className="input-group text-wrap justify-content-center mb-3 p-2">
+                        <div key={(entry.id + index)}  className="input-group text-wrap justify-content-center mb-3 p-2">
                             <div className={"input-group-text col-3 fs-3 text-wrap text-break " + (entry.status === "0" ? "btn-success id-bg-on" : entry.status === "1" ? "btn-danger id-bg-off" : "btn-dark id-bg-un")}>{entry.id}</div>
-                            <button key={(entry.id + index)} 
+                            <button 
                                 id={entry.id}
                                 className={"btn p-3 col-9 " + (entry.status === "0" ? "btn-success" : entry.status === "1" ? "btn-danger" : "btn-secondary")}
                                 type="button"

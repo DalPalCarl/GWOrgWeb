@@ -6,8 +6,9 @@ img.logo {
 .navbar {
     background-color: #E2DFD0;
     height: 100px;
-    
 }
+
+
 
 .page-body-header {
     background-color: #EEEEEE;
@@ -19,6 +20,14 @@ img.logo {
     background-color: #EEEEEE;
     width: 90%;
     justify-content: center;
+}
+
+.navbar-dark {
+    background-color: #383838;
+}
+
+.page-body-dark {
+    background-color: #5e5e5e;
 }
 
 .footer {
